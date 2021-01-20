@@ -41,7 +41,7 @@ public class Card {
     }
 
     public void setFaceValue(int faceValue) {
-        if (faceValue>= 1 && faceValue<= 14)
+        if (faceValue >= 1 && faceValue <= 14)
             this.faceValue = faceValue;
         else
             throw new IllegalArgumentException("face value must be between 1 and 14 inclusive");
@@ -53,5 +53,14 @@ public class Card {
 
     public void setSuit(String suit) {
         this.suit = suit;
+    }
+
+    /**
+     * This method will return a String that represents
+     * the card with the face name and suit
+     */
+    public String toString()
+    {
+        return faceName + " of " + suit;
     }
 }
