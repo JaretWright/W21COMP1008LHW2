@@ -29,6 +29,19 @@ public class Card {
     public Card(String faceName, String suit) {
         setFaceName(faceName);
         setSuit(suit);
+        setFaceValue(calculateFaceValue());
+    }
+
+    /**
+     * This method will use the face name to provide a value for the card
+     * @return int representing the card value in the range 1-14.  Ace will be 14
+     */
+    private int calculateFaceValue()
+    {
+//        List<String> faceNames = getValidFaceNames();
+//        int positionInList = faceNames.indexOf(faceName);
+//        return positionInList+2;
+        return getValidFaceNames().indexOf(faceName)+2;
     }
 
     public String getFaceName() {
