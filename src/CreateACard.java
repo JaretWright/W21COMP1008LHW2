@@ -7,7 +7,9 @@ public class CreateACard {
         //datatype  object name         calling the constructor
         Scanner     scanner       = new Scanner(System.in);
         Card        aceOfSpades   = new Card("Ace","Spades",14);
+        Card        phoneOfBatteries = new Card("Phone","Batteries",13);
 
         System.out.println(aceOfSpades);
+        System.out.println(phoneOfBatteries);
     }
 }
