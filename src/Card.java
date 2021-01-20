@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Card {
     private String faceName;
     private int faceValue;
@@ -51,8 +55,20 @@ public class Card {
         return suit;
     }
 
+    /**
+     * This method will return an ArrayList of valid suit names
+     * @return a list of String objects that reflect valid suit names
+     */
+    public static List<String> getValidSuits()
+    {
+        return Arrays.asList("Spades","Clubs","Hearts","Diamonds");
+    }
+
     public void setSuit(String suit) {
-        this.suit = suit;
+        if (getValidSuits().contains(suit))
+            this.suit = suit;
+        else
+            throw new IllegalArgumentException(suit + " was entered, valid suits are: "+getValidSuits());
     }
 
     /**
