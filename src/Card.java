@@ -24,7 +24,34 @@ public class Card {
      * @param suit
      */
     public Card(String faceName, String suit) {
+        setFaceName(faceName);
+        setSuit(suit);
+    }
+
+    public String getFaceName() {
+        return faceName;
+    }
+
+    public void setFaceName(String faceName) {
         this.faceName = faceName;
+    }
+
+    public int getFaceValue() {
+        return faceValue;
+    }
+
+    public void setFaceValue(int faceValue) {
+        if (faceValue>= 1 && faceValue<= 14)
+            this.faceValue = faceValue;
+        else
+            throw new IllegalArgumentException("face value must be between 1 and 14 inclusive");
+    }
+
+    public String getSuit() {
+        return suit;
+    }
+
+    public void setSuit(String suit) {
         this.suit = suit;
     }
 }
