@@ -7,9 +7,12 @@ public class CreateACard {
         //datatype  object name         calling the constructor
         Scanner     scanner       = new Scanner(System.in);
         Card        aceOfSpades   = new Card("Ace","Spades",14);
-        Card        phoneOfBatteries = new Card("Phone","Batteries",13);
+        Card        twoOfHearts   = new Card("two","Hearts",13);
+
+        //on lines 9 and 10 we instantiated 2 Card objects
+
 
         System.out.println(aceOfSpades);
-        System.out.println(phoneOfBatteries);
+        System.out.println(twoOfHearts);
     }
 }

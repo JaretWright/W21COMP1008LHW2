@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -36,12 +35,33 @@ public class Card {
         return faceName;
     }
 
+
+    /**
+     * This method will validate if the argument is in the list of valid face names
+     * and set the instance variable
+     * @param faceName
+     */
     public void setFaceName(String faceName) {
-        this.faceName = faceName;
+        faceName = faceName.toLowerCase();
+        if (getValidFaceNames().contains(faceName))
+            this.faceName = faceName;
+        else
+            throw new IllegalArgumentException(faceName + " is not a valid face name, use 1 of "+
+                    getValidFaceNames());
     }
 
     public int getFaceValue() {
         return faceValue;
+    }
+
+    /**
+     * This will return a list of the valid face names
+     * @return List holding String objects with the valid face names
+     */
+    public static List<String> getValidFaceNames()
+    {
+        return Arrays.asList("two","three","four","five","six","seven","eight","nine",
+                            "ten","jack","queen","king","ace");
     }
 
     public void setFaceValue(int faceValue) {
@@ -61,10 +81,11 @@ public class Card {
      */
     public static List<String> getValidSuits()
     {
-        return Arrays.asList("Spades","Clubs","Hearts","Diamonds");
+        return Arrays.asList("spades","clubs","hearts","diamonds");
     }
 
     public void setSuit(String suit) {
+        suit = suit.toLowerCase();
         if (getValidSuits().contains(suit))
             this.suit = suit;
         else
